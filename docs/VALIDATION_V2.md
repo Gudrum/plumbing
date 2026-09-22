@@ -26,7 +26,10 @@ Entorno: macOS, Node 26.8.1, Next.js 15.5.25, Google Chrome headless mediante Pl
 
 ## Límites y release
 
-- Publicación: pendiente hasta comprobar la ejecución de GitHub Actions y el sitio público.
+- Publicación aprobada: commit `0cb8d9d`, ejecución https://github.com/Gudrum/plumbing/actions/runs/35683059371 finalizada correctamente.
+- Comprobación pública aprobada: `TEST_URL=https://gudrum.github.io/plumbing node scripts/check-v2.mjs` pasa todos los casos V2. HTML público español: selector V2 presente, lang=es, noindex activo, datos estructurados comerciales no verificados ausentes.
+- Comprobación adicional aprobada: selección de problema/propiedad de portada propagada a CTA de cabecera, barra móvil, cierre y footer.
+- Capturas de la referencia permanecen locales en docs/review-reference; no se publican como recursos del sitio.
 - Dispositivos físicos: no probados; tamaños emulados en Chrome.
 - Producción, envío real, analítica y mejora porcentual de conversión: no aplica a la demo.
 - Datos pendientes del cliente: contacto, cobertura, horarios, equipo, reseñas, credenciales, precios y condiciones cuando se deseen publicar.
