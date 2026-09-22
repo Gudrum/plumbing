@@ -21,6 +21,13 @@ Production needs verified contact information, location/coverage, operating hour
 
 ## Architecture
 
-Localized routes are generated statically, including all seven service detail pages, contact, residential, commercial, about, areas and privacy. The root chooses the remembered language (English by default). Language links retain the equivalent page and request query parameters. Form fields live only in React state and are cleared on completion; switching to a different document resets an unfinished form.
+Localized routes are generated statically, including all seven service detail pages, contact, residential, commercial, about, areas and privacy. The root chooses the remembered language (English by default). Language links retain the equivalent page and request query parameters. Form fields live only in React state and are cleared on completion; switching languages on the contact page retains the step, selections and fields in volatile React memory. Reloading, closing or leaving the contact page clears an unfinished form. No personal data enters browser storage or URLs.
 
 Recovery: redeploy the previous Git commit through Actions. No database or migrations.
+
+## V2
+
+- `src/lib/experience.ts`: bilingual finder, category filters, service preparation guidance, relevant related services and photo mapping.
+- `commercialContent` in `src/lib/config.ts`: optional team, reviews, pricing and conditions. Only explicitly verified, sourced and bilingual entries render. Empty by default.
+- Service and property context propagate across request and quote CTAs. Quotes carry a distinct editable intent. Only the chosen contact channel is required.
+- `node scripts/check-v2.mjs`: focused regression coverage for V2. Use `TEST_URL=https://gudrum.github.io/plumbing` for public checks.
